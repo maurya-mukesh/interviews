@@ -17,7 +17,7 @@ const customerSchema = new mongoose.Schema({
     required: true,
     default: "customer",
   },
-  contact_number: {
+  contactNumber: {
     type: String,
     required: true,
   },

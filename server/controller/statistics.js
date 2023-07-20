@@ -114,7 +114,12 @@ class Statistics {
       }
 
       res.json({
-        averageRentalDuration: averageRentalDuration[0].averageDuration,
+        status: "success",
+        data: {
+          averageRentalDuration: averageRentalDuration[0].averageDuration,
+          totalTimeInDays:
+            averageRentalDuration[0].averageDuration / (1000 * 60 * 60 * 24),
+        },
       });
     } catch (error) {
       res.status(400).json({ error: error.message });

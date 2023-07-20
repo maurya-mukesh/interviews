@@ -28,7 +28,7 @@ router.get(
   bookingController.vehiclesBookings
 );
 
-// Customers API : Public API
+// Customers API 
 router.post(
   "/customers",
   verifyToken,

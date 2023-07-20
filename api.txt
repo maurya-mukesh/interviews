@@ -1,28 +1,28 @@
 ROLE: ['customer', 'admin'] => have access to below API
 
 1.Auth: (login needed for user-profile)
-  POST:  http://localhost:5000/auth/user/register
+  POST:  http://localhost:5000/api/auth/user/register
   POST:  http://localhost:5000/api/auth/user/login 
   GET :  http://localhost:5000/api/auth/user-profile/:id
 
 2.Bookings : Login needed
-  POST:  http://localhost:5000/bookings
-  GET :  http://localhost:5000/customers/:customerId/bookings
-  GET :  http://localhost:5000/vehicles/:vehicleId/bookings
+  POST:  http://localhost:5000/api/bookings
+  GET :  http://localhost:5000/api/customers/:customerId/bookings
+  GET :  http://localhost:5000/api/vehicles/:vehicleId/bookings
 
 3.Customer API: Login needed (only for admin)
-  POST: http://localhost:5000/customers
-  PUT : http://localhost:5000/customers/:id
-  DEL : http://localhost:5000/customers/:id
+  POST: http://localhost:5000/api/customers
+  PUT : http://localhost:5000/api/customers/:id
+  DEL : http://localhost:5000/api/customers/:id
 
 4.Statistics API : Public API 
-  GET : http://localhost:5000/statistics/most-popular-vehicle
-  GET : http://localhost:5000/statistics/bookings-per-vehicle
-  GET : http://localhost:5000/statistics/average-rental-duration
+  GET : http://localhost:5000/api/statistics/most-popular-vehicle
+  GET : http://localhost:5000/api/statistics/bookings-per-vehicle
+  GET : http://localhost:5000/api/statistics/average-rental-duration
 
 5.Vehicles API : (Only For Admin: Login Needed)
-  POST: http://localhost:5000/vehicles/new-vehicle
-  PUT : http://localhost:5000/vehicles/update/:id
-  DEL : http://localhost:5000/vehicles/delete/:id
-  GET : http://localhost:5000/vehicles
-  GET : http://localhost:5000/vehicles/maintenance/:vehicleId
+  POST: http://localhost:5000/api/vehicles/new-vehicle
+  PUT : http://localhost:5000/api/vehicles/update/:id
+  DEL : http://localhost:5000/api/vehicles/delete/:id
+  GET : http://localhost:5000/api/vehicles
+  GET : http://localhost:5000/api/vehicles/maintenance/:vehicleId

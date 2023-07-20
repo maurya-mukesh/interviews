@@ -11,7 +11,6 @@ const User = require("../model/User");
  */
 const verifyToken = async (req, res, next) => {
   let token;
-  console.log(req.param);
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
@@ -37,10 +36,12 @@ const verifyToken = async (req, res, next) => {
         .json({ error: "Invalid token or token expired, try to login again" });
     } else {
       // check if user exists or not
+      console.log("decoded.userId", decoded.userId);
       const checkUser = await User.findById(decoded.userId);
+
       if (
-        (!checkUser && checkUser.role === "admin") ||
-        checkUser.role === "customer"
+        (!checkUser && checkUser.role !== "admin") ||
+        checkUser.role !== "customer"
       ) {
         return res.status(401).json({
           error:
