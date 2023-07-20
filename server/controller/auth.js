@@ -18,13 +18,8 @@ class AuthController {
    */
   async register(req, res) {
     try {
-      const { name, email, password, phone } = req.body;
-      console.log(
-        "🚀 ~ file: authController.js:23 ~ AuthController ~ register ~ req:",
-        req.body
-      );
+      const { name, email, password, contactNumber } = req.body;
       let isExisting = await Users.findOne({ email: email });
-      // console.log("🚀 ~ file: authController.js:22 ~ AuthController ~ register ~ isExisting:", isExisting)
       if (isExisting) {
         return res.status(409).json({ error: "user is already exist" });
       }
@@ -34,7 +29,7 @@ class AuthController {
         name,
         email,
         password: hash,
-        phone,
+        contactNumber,
       });
       return res
         .status(200)
@@ -55,8 +50,11 @@ class AuthController {
   async login(req, res) {
     try {
       let { email, password } = req.body;
-      let userData = await Users.findOne({ email });
-      // console.log("LOG ~ file: authController.js:39 ~ login ~ userData:", userData);
+      let userData = await Users.findOne({ email: email });
+      console.log(
+        "LOG ~ file: authController.js:39 ~ login ~ userData:",
+        userData
+      );
       if (!userData) {
         return res.status(409).json({ message: "user not found" });
       }

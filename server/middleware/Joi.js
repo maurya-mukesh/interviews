@@ -14,13 +14,14 @@ async function validation(req, res, next) {
     role: Joi.string()
       .valid(...roles)
       .required(),
-    contact_number: Joi.string()
+    contactNumber: Joi.string()
       .min(6)
       .max(12)
       .error(new Error("Phone number should not be more than 12 characters")),
   });
 
   try {
+    console.log("req.body", req.body);
     await schema.validateAsync(req.body);
     next();
   } catch (error) {

@@ -13,13 +13,14 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  contact_number: {
+  contactNumber: {
     type: String,
     required: true,
   },
   role: {
     type: String,
     required: true,
+    default: "customer",
   },
   added_on: {
     type: Date,

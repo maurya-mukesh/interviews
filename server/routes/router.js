@@ -13,7 +13,7 @@ const authorizeAdmin = require("../middleware/verifyAdmin");
 // Auth API
 router.post("/auth/user/login", authController.login);
 router.post("/auth/user/register", joiValidation, authController.register);
-router.get("/auth/users-profile/:id", verifyToken, authController.userProfile);
+router.get("/auth/user-profile/:id", verifyToken, authController.userProfile);
 
 // Booking API
 router.post("/bookings", verifyToken, bookingController.booking);
@@ -29,9 +29,24 @@ router.get(
 );
 
 // Customers API : Public API
-router.post("/customers", customerController.newCustomers);
-router.put("/customers/:id", verifyToken, customerController.updateCustomer);
-router.delete("/customers/:id", verifyToken, customerController.deleteCustomer);
+router.post(
+  "/customers",
+  verifyToken,
+  authorizeAdmin,
+  customerController.newCustomers
+);
+router.put(
+  "/customers/:id",
+  verifyToken,
+  authorizeAdmin,
+  customerController.updateCustomer
+);
+router.delete(
+  "/customers/:id",
+  verifyToken,
+  authorizeAdmin,
+  customerController.deleteCustomer
+);
 
 // Statistics API  :: Public API
 router.get(

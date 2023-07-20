@@ -11,6 +11,7 @@ const User = require("../model/User");
  */
 const verifyToken = async (req, res, next) => {
   let token;
+  console.log(req.param);
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
