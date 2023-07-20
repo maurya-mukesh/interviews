@@ -37,10 +37,14 @@ const verifyToken = async (req, res, next) => {
     } else {
       // check if user exists or not
       const checkUser = await User.findById(decoded.userId);
-      if (!checkUser) {
-        return res
-          .status(401)
-          .json({ error: "User belonging to this token no longer exists" });
+      if (
+        (!checkUser && checkUser.role === "admin") ||
+        checkUser.role === "customer"
+      ) {
+        return res.status(401).json({
+          error:
+            "User belonging to this token no longer exists/ permission denied",
+        });
       }
 
       //GRANT ACCESS TO PROTECTED ROUTE

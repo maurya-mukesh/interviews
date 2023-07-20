@@ -30,8 +30,8 @@ router.get(
 
 // Customers API : Public API
 router.post("/customers", customerController.newCustomers);
-router.put("/customers/:id", customerController.updateCustomer);
-router.delete("/customers/:id", customerController.deleteCustomer);
+router.put("/customers/:id", verifyToken, customerController.updateCustomer);
+router.delete("/customers/:id", verifyToken, customerController.deleteCustomer);
 
 // Statistics API  :: Public API
 router.get(

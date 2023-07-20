@@ -12,6 +12,11 @@ const customerSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  role: {
+    type: String,
+    required: true,
+    default: "customer",
+  },
   contact_number: {
     type: String,
     required: true,
