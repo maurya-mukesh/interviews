@@ -3,7 +3,11 @@
 const Booking = require("../model/Booking");
 
 class Statistics {
-  constructor() {}
+  constructor() {
+    this.mostPopularVehicle = this.mostPopularVehicle.bind(this);
+    this.bookingsPerVehicle = this.bookingsPerVehicle.bind(this);
+    this.averageRentalDuration = this.averageRentalDuration.bind(this);
+  }
   // Get the most popular vehicle (based on the number of bookings)
   async mostPopularVehicle(req, res) {
     try {

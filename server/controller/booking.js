@@ -2,7 +2,11 @@ const Booking = require("../model/Booking");
 const Vehicle = require("../model/Vehicle");
 
 class BookingController {
-  constructor() {}
+  constructor() {
+    this.booking = this.booking.bind(this);
+    this.customersBookings = this.customersBookings.bind(this);
+    this.vehiclesBookings = this.vehiclesBookings.bind(this);
+  }
   // Create a new booking
   async booking(req, res) {
     try {

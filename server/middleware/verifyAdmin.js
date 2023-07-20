@@ -1,6 +1,6 @@
 // Authorization middleware
 function authorizeAdmin(req, res, next) {
-  if (req.user.role === "administrator") {
+  if (req.user.role === "admin") {
     next();
   } else {
     return res

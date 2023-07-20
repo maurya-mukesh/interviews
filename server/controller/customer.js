@@ -1,7 +1,11 @@
 const Customer = require("../model/Customer");
 
 class CustomersController {
-  constructor() {}
+  constructor() {
+    this.newCustomers = this.newCustomers.bind(this);
+    this.updateCustomer = this.updateCustomer.bind(this);
+    this.deleteCustomer = this.deleteCustomer.bind(this);
+  }
 
   // Add a new customer
   async newCustomers(req, res) {

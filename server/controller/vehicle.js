@@ -1,7 +1,13 @@
-const Vehicle = require("../models/Vehicle");
+const Vehicle = require("../model/Vehicle");
 
 class VehicleController {
-  constructor() {}
+  constructor() {
+    this.newVehicles = this.newVehicles.bind(this);
+    this.updateVehicles = this.updateVehicles.bind(this);
+    this.deleteVehicles = this.deleteVehicles.bind(this);
+    this.searchVehicles = this.searchVehicles.bind(this);
+    this.underMaintenance = this.underMaintenance.bind(this);
+  }
 
   // Add a new vehicle
   async newVehicles(req, res) {
