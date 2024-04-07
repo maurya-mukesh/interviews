@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegation Example</title>
+</head>
+<body>
+  <ul id="parentList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ul>
+
+  <script>
+    // Attach event listener to parent element
+    document.getElementById('parentList').addEventListener('click', function(event) {
+      // Check if clicked element is an <li> element
+      if (event.target.tagName === 'LI') {
+        // Handle event (e.g., toggle class)
+        event.target.classList.toggle('highlight');
+      }
+    });
+  </script>
+
+  <style>
+    /* Styling for highlighted items */
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</body>
+</html>
