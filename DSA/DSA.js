@@ -2,25 +2,28 @@
 
 const checkParenthesis = (string) => {
   let map = {
-    "(": "(",
-    "{": "{",
-    "[": "[",
+    "(": ")",
+    "{": "}",
+    "[": "]",
   };
   let stack = [];
   for (let i = 0; i <= string.length; i++) {
-    let chat = string[i];
+    let char = string[i];
     if (map[char]) {
       stack.push(char);
     } else {
       let top = stack.pop();
-      
+      if (map[top] !== char) {
+        return false;
+      }
     }
   }
+  return stack.length === 0;
 };
 
 let string1 = "[[]]";
 let string2 = "[[}]]";
-let string3 = "[()[{}}]]";
+let string3 = "[{}()[(){}]]";
 let string4 = "(]})[}";
 
 let result1 = checkParenthesis(string1);
