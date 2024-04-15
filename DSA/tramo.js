@@ -94,3 +94,22 @@
 // } catch (err) {
 //   console.error(err);
 // }
+
+// let value = 3 - "3";
+// console.log("value", value);
+// console.log(typeof value);
+
+for (var i = 1; i <= 2; i++) {
+  // setTimeout(function () {
+  //   console.log(i);
+  // }, 0);
+  printNum(1);
+}
+
+function printNum(i) {
+  setTimeout(function () {
+    console.log(i);
+  }, 200);
+}
+
+// newFun();
