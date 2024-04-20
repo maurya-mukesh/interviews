@@ -4,17 +4,28 @@ import { Transform } from "stream";
 
 function pipeTransform() {
   const readStream = fs.createReadStream("./data/data.csv");
+
+  const transform = new Transform({
+    objectMode: true,
+    transform(chunk, enc, callback) {
+      const user = {
+        name: chunk.name,
+        email: chunk.email,
+        color: chunk.color,
+        salary: Number(chunk.salary),
+        isActive: chunk.isActive === "true",
+      };
+      callback(null, user);
+    },
+  });
   readStream
     .pipe(csv({ delimiter: ";" }, { objectMode: true }))
-    .pipe(
-      new Transform({
-        objectMode: true,
-        transform(chunk, enc, callback) {
-          console.log("dataChunk", chunk);
-        },
-      })
-    )
-    .on("data", (data) => console.log("=>", data));
+    .pipe(transform)
+    .on("data", (data) => console.log("=>", data))
+    .on("error", (error) => {
+      console.log("error", error);
+    })
+    .on("end", () => console.log("operation finished"));
 }
 
 pipeTransform();
