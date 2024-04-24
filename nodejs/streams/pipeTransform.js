@@ -21,7 +21,7 @@ function pipeTransform() {
   readStream
     .pipe(csv({ delimiter: ";" }, { objectMode: true }))
     .pipe(transform)
-    .on("data", (data) => console.log("=>", data))
+    .on("data", (data) => console.log("=>user", data))
     .on("error", (error) => {
       console.log("error", error);
     })
@@ -29,3 +29,19 @@ function pipeTransform() {
 }
 
 pipeTransform();
+
+<Route
+  exact
+  path="/business"
+  component={() => (render) =>
+    (
+      <News
+        setProgress={setProgress}
+        apiKey={apiKey}
+        key="business"
+        pageSize={pageSize}
+        country="in"
+        category="business"
+      />
+    )}
+/>;
