@@ -22,3 +22,27 @@
 
 // Q.10: Valid Mountain Array: Given an array A of integers, return true if and only if it is a valid mountain array.
 
+// Q. 11: Change a number to equivalent roman number?
+function changeNumToRoman(num:number):string{
+  let romanNum={
+    100:"C",
+    90:"XC",
+    50:"L",
+    40:"XL",
+    10:"X",
+    9:"IX",
+    5:"V",
+    4:"IV",
+    1:"I"
+    };
+    let result:string = ""
+    for(let i:number; i<Object.keys(romanNum).length; i++){
+      while(num>romanNum[i]){
+        result+=romanNum[i];
+        num-= romanNum[i]
+      }
+    }
+    return result;
+} 
+
+console.log(changeNumToRoman(22))

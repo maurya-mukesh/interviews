@@ -1,88 +1,47 @@
-// // check equal opening and closing parenthesis [{()}]
-
-// const checkParenthesis = (string) => {
-//   let map = {
-//     "(": ")",
-//     "{": "}",
-//     "[": "]",
-//   };
-//   let stack = [];
-//   for (let i = 0; i <= string.length; i++) {
-//     let char = string[i];
-//     if (map[char]) {
-//       stack.push(char);
-//     } else {
-//       let top = stack.pop();
-//       if (map[top] !== char) {
-//         return false;
-//       }
+// function numToRoman(num) {
+//   let result = "";
+//   let roman = [
+//     { num: 100, roman: "C" },
+//     { num: 90, roman: "XC" },
+//     { num: 50, roman: "L" },
+//     { num: 40, roman: "XL" },
+//     { num: 10, roman: "X" },
+//     { num: 9, roman: "IX" },
+//     { num: 4, roman: "IV" },
+//     { num: 1, roman: "I" },
+//   ];
+//   console.log(roman.length);
+//   if (num > roman[0].num || num < roman[roman.length - 1].num) {
+//     return "Outside of the range";
+//   }
+//   for (let i = 0; i < roman.length; i++) {
+//     while (num >= roman[i].num) {
+//       result += roman[i].roman;
+//       num -= roman[i].num;
 //     }
 //   }
-//   return stack.length === 0;
-// };
-
-// let string1 = "[[]]";
-// let string2 = "[[}]]";
-// let string3 = "[{}()[(){}]]";
-// let string4 = "(]})[}";
-
-// let result1 = checkParenthesis(string1);
-// let result2 = checkParenthesis(string2);
-// let result3 = checkParenthesis(string3);
-// let result4 = checkParenthesis(string4);
-// console.log(result1);
-// console.log(result2);
-// console.log(result3);
-// console.log(result4);
-
-// let obj = {
-//   name: "mukesh",
-//   age: 30,
-//   role: "dev",
-// };
-
-// let keys = Object.keys(obj);
-// let value = Object.values(obj);
-// console.log("🚀 ~ value:", value);
-// console.log("🚀 ~ keys:", keys);
-
-// let [keys, values] = Object.entries(obj);
-// let entry = Object.entries(obj);
-// let output = [];
-// let keys = [];
-// let values = [];
-// for (let [key, value] of entry) {
-//   keys.push(key);
-//   values.push(value);
+//   return result;
 // }
-// output.push(keys, values);
-// console.log(output);
 
-// const findMatch = (string) => {
-//   let mapObj = {
-//     "(": ")",
-//     "{": "}",
-//     "[": "]",
-//   };
-//   let stack = [];
-//   for (let i = 0; i < string.length; i++) {
-//     let char = string[i];
-//     if (mapObj[char]) {
-//       stack.push(char);
-//     } else {
-//       let popOut = stack.pop();
-//       if (mapObj[popOut] !== char) {
-//         return false;
-//       }
+// let num = 33;
+// const result = numToRoman(num);
+// console.log(result);
+
+// const numToRoman = (num) => {
+//   let result = "";
+//   let map = { C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
+//   if (num < 1 || num > 100) {
+//     return "out of range";
+//   }
+//   for (let i in map) {
+//     while (num >= map[i]) {
+//       result += i;
+//       num -= map[i];
 //     }
 //   }
-//   return stack.length === 0;
+//   return result;
 // };
+// for (let i = 0; i <= 100; i++) {
+//   console.log(`${i}.`, numToRoman(i));
+// }
 
-// let string1 = "[{[]}]";
-// let string2 = "[{({{{}})}]";
-// let result1 = findMatch(string1);
-// let result2 = findMatch(string2);
-
-// console.log(result1);
-// console.log(result2);

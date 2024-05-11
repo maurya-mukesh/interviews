@@ -85,23 +85,3 @@
 // console.log(fruitRes);
 // const sentenceRes = sentence.split("");
 // console.log(sentenceRes);
-
-let arr = [1, 2, 3, 4, 5];
-function myFun(acc, next){
-  return acc+next
-}
-const reduceVal = arr.reduce(myFun, 0);
-
-console.log(reduceVal);
-Array.prototype.myReduce=function(callback, initialVal){
-  let accumulator;
-  let nextValue;
-  accumulator = initialVal !== undefined ? initialVal: this[0];
-  nextValue = initialVal !== undefined ? this[1]: this[0]
-  for(let i=nextValue+1; i<this.length; i++){
-    
-  }
-
-
-  return callback(acc, next)
-}
