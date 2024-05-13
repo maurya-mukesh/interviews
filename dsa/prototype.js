@@ -85,3 +85,75 @@
 // console.log(fruitRes);
 // const sentenceRes = sentence.split("");
 // console.log(sentenceRes);
+
+// prototype repeat ============================================
+
+//forEach
+// let arr = [2, 4, 6];
+// // function abc(num) {
+// //   console.log(num * 2);
+// // }
+// arr.forEach((val, idx, arr) => {
+//   console.log(val * idx);
+//   console.log(arr);
+// });
+// // console.log("=======my=====");
+
+// Array.prototype.myForEach = function (callback) {
+//   console.log("my custom function========>");
+//   for (let i = 0; i < this.length; i++) {
+//     callback(this[i], i, this);
+//   }
+//   return undefined;
+// };
+
+// arr.myForEach((val, idx, arr) => {
+//   console.log(val * idx);
+//   console.log(arr);
+// });
+
+// map
+// let arr = [3, 4, 6];
+
+// let result = arr.map((val, idx) => val * idx);
+// console.log(result);
+
+// Array.prototype.map = null;
+// if (!Array.prototype.map) {
+//   Array.prototype.map = function (callback) {
+//     console.log("this is our map");
+//     let arr = [];
+//     for (let i = 0; i < this.length; i++) {
+//       let result = callback(this[i], i, this);
+//       arr.push(result);
+//     }
+//     return arr;
+//   };
+
+//   let result = arr.map((val, i) => val * i);
+//   console.log(result);
+// }
+
+// filter
+// let arr = [5, 7, 9, 1, 8, 6, 4, 3, 2];
+// let filteredResult = arr.filter((ele) => ele % 2 !== 0);
+// console.log(filteredResult);
+
+// Array.prototype.myFilter = function (callback) {
+//   console.log("my custom filter");
+//   let res = [];
+//   for (let i = 0; i < this.length; i++) {
+//     let result = callback(this[i], idx);
+//     res.push(result);
+//   }
+//   return res;
+// };
+
+// let filteredResult1 = arr.filter((ele) => ele % 2 === 0);
+// console.log(filteredResult1);
+
+let arr = [1, 2, 3, 4, 5];
+let res = arr.reduce((acc, nextValue) => {
+  acc + nextValue;
+}, 0);
+console.log("res=>", res);

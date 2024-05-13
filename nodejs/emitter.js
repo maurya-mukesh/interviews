@@ -1,16 +1,12 @@
 const EventEmitter = require("events");
-const emitter = new EventEmitter();
 
-emitter.on("hello", callbackHello);
-emitter.on("by", callbackBy);
+const newEmitter = new EventEmitter();
 
-function callbackBy(name) {
-  console.log("good by world " + name);
-}
+newEmitter.on("myEvent", (data) => console.log("emitterData=>", data));
 
-function callbackHello(name) {
-  console.log("hello world " + name);
-}
+newEmitter.on("anotherEvent", (data) =>
+  console.log("new emitter logged", data)
+);
 
-emitter.emit("hello", "mukesh");
-emitter.emit("by", "Aditya");
+newEmitter.emit("myEvent", "new data1");
+newEmitter.emit("anotherEvent", "new data2");
