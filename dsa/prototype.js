@@ -152,8 +152,128 @@
 // let filteredResult1 = arr.filter((ele) => ele % 2 === 0);
 // console.log(filteredResult1);
 
-let arr = [1, 2, 3, 4, 5];
-let res = arr.reduce((acc, nextValue) => {
-  acc + nextValue;
-}, 0);
-console.log("res=>", res);
+// let arr = [1, 2, 3, 4, 5];
+// let res = arr.reduce((acc, nextValue) => {
+//   acc + nextValue;
+// }, 0);
+// console.log("res=>", res);
+
+// polyfill for map, filter, reduce, split and join==========================================
+
+//map
+// let mulByTwo = [1, 2, 3, 4].map((ele) => ele * 2);
+// console.log(mulByTwo);
+
+// Array.prototype.myMap = function (callback) {
+//   let resp = [];
+//   for (let i = 0; i < this.length; i++) {
+//     result = callback(this[i], i, this);
+//     resp.push(result);
+//   }
+//   return resp;
+// };
+// let mulByTwo_ = [1, 2, 3, 4].myMap((ele) => ele * 2);
+// console.log(mulByTwo_);
+
+//filter
+// function findEven(num) {
+//   if (num > 5) {
+//     return num;
+//   }
+// }
+// //filter
+// let filterEven = [1, 2, 3, 4, 5, 6].filter(findEven);
+// console.log(filterEven);
+
+// Array.prototype.myFilter = function (callback) {
+//   let arr = [];
+//   for (let i = 0; i < this.length; i++) {
+//     //[1, 2, 3, 4, 5, 6]
+//     if (callback(this[i], i, this)) {
+//       arr.push(this[i]);
+//     }
+//   }
+//   return arr;
+// };
+
+// let filterEven_ = [1, 2, 3, 4, 5, 6].myFilter((ele) => ele > 5);
+// console.log(filterEven_);
+
+// let result = [1, 2, 3, 4, 5].reduce((accumulator, nextValue) => {
+//   return accumulator + nextValue;
+// }, 0);
+
+// console.log(result);
+
+// Array.prototype.myReduce = function (callback, initialValue) {
+//   let accumulator = initialValue !== undefined ? initialValue : this[0];
+//   let index = initialValue !== undefined ? 0 : 1;
+//   for (let i = index; i < this.length; i++) {
+//     accumulator = callback(accumulator, this[i], i, this);
+//   }
+//   return accumulator;
+// };
+
+// let result1 = [1, 2, 3, 4, 5].myReduce((accumulator, nextValue) => {
+//   return accumulator + nextValue;
+// }, 0);
+
+// console.log(result1);
+
+//split
+
+// let string = "hi good evening friends";
+// let res = string.split("i");
+// console.log("🚀 ~ res:", res);
+// String.prototype.mySplit = function (separator) {
+//   let result = [];
+//   // console.log(separator);
+//   // console.log(this);
+//   if (separator === undefined || separator.length === 0) {
+//     for (let i = 0; i < this.length; i++) {
+//       result.push(this[i]);
+//     }
+//     return result;
+//   }
+//   let index = 0;
+//   for (let i = 0; i < this.length; i++) {
+//     if (this[i] === separator) {
+//       let substring = this.slice(index, i);
+//       result.push(substring);
+//       index = i + 1;
+//     }
+//   }
+//   let lastSubString = this.slice(index);
+//   if (lastSubString.length > 0) {
+//     result.push(lastSubString);
+//   }
+//   return result;
+// };
+
+// let string = "mukesh maurya";
+// let res = string.mySplit(" ");
+// console.log("🚀 ~ res:", res);
+// console.log("type of", Array.isArray(res));
+
+// join
+// Array.prototype.myJoin = function (separator) {
+//   let res = "";
+//   if (separator === undefined || separator.length === 0) {
+//     for (let i = 0; i < this.length; i++) {
+//       res += this[i];
+//     }
+//   } else {
+//     for (let i = 0; i < this.length; i++) {
+//       res += this[i];
+//       if (separator > 0) {
+//         res += separator;
+//       }
+//     }
+//   }
+//   return res;
+// };
+
+// let string = "my name is khan";
+// let result = string.split(" ").join("==");
+// console.log("🚀 ~ result:", result);
+// console.log("🚀 ~ type:", typeof result);
