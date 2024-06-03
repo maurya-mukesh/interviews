@@ -438,7 +438,6 @@
 // var reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
 // console.log('LOG ~ file: 37Essential.js:434 ~ reverseEachWord:', reverseEachWord);
 
-
-for (var i = 0; i < 4; i++) {
-  setTimeout(() => console.log(i), 0)
-}
+// for (var i = 0; i < 4; i++) {
+//   setTimeout(() => console.log(i), 0)
+// }
