@@ -45,4 +45,38 @@
 //   console.log(`${i}.`, numToRoman(i));
 // }
 
-// 
+// Quick sort
+// function quickSort(arr) {
+//   if (arr.length <= 1) return arr;
+//   let pivot = arr[arr.length - 1];
+//   let leftArr = [];
+//   let rightArr = [];
+
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i] > pivot) {
+//       rightArr.push(arr[i]);
+//     } else {
+//       leftArr.push(arr[i]);
+//     }
+//   }
+//   return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
+// }
+
+// let sortedArr = quickSort([1, 2, 1, 4, 3, 8, 4, 0, 3]);
+// console.log(sortedArr);
+
+// let users = [
+//   { name: "mukesh", active: true, age: 29 },
+//   { name: "Vinay", active: true, age: 22 },
+//   { name: "Abhi", active: false, age: 33 },
+//   { name: "Anand", active: true, age: 19 },
+//   { name: "Ankur", active: false, age: 23 },
+//   { name: "Gunjan", active: true, age: 22 },
+// ];
+
+// let result = users
+//   .filter((user) => user.active)
+//   .sort((a, b) => a.age - b.age)
+//   .map((ele) => ele.name);
+
+// console.log(result);

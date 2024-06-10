@@ -1,22 +1,23 @@
 // "use strict";
-// (function(){
+// (function () {
 //   var a = b = 3;
 // })();
 
-// console.log("a defined? " + (typeof a ));
-// console.log("b defined? " + (typeof b ));
+// console.log("a defined? " + typeof a);
+// console.log("b defined? " + typeof b);
 
+// "use strict";
 // var myObject = {
 //   foo: "bar",
-//   func: function() {
-//       var self = this;
-//       console.log("outer func:  this.foo = " + this.foo); //"bar"
-//       console.log("outer func:  self.foo = " + self.foo); //"bar"
-//       (function() {
-//           console.log("inner func:  this.foo = " + this.foo); // undefined
-//           console.log("inner func:  self.foo = " + self.foo); // "bar"
-//       }());
-//   }
+//   func: function () {
+//     var self = this;
+//     console.log("outer func:  this.foo = " + this.foo); //"bar"
+//     console.log("outer func:  self.foo = " + self.foo); //"bar"
+//     (function () {
+//       console.log("inner func:  this.foo = " + this.foo); // undefined
+//       console.log("inner func:  self.foo = " + self.foo); // "bar"
+//     })();
+//   },
 // };
 // myObject.func();
 
@@ -441,3 +442,4 @@
 // for (var i = 0; i < 4; i++) {
 //   setTimeout(() => console.log(i), 0)
 // }
+
