@@ -1,0 +1,16 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "description": "this is demo app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "mukesh maurya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.3"
+  }
+}

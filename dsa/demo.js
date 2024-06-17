@@ -19,7 +19,7 @@
 //   }
 // }
 // console.log(outputArr);
-           
+
 // let arr = [0, 3, 2, 3, 5, 5, 9];
 // let newArr = [];
 // function findRightPosition(arr) {

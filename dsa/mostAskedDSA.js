@@ -160,9 +160,8 @@ output: user = {
 // let arr = [99, -98, -17, -16, -Infinity];
 // console.log(secondLargest(arr));
 
-
 /**
- * 
+ *
  * @Question5 Print all the possible subsets from a given slice of integers.
  * @returns  sub-integer as an array
  */
@@ -184,3 +183,134 @@ output: user = {
 // let nums = [1, 2, 3];
 // let subsets = generateSubsets(nums);
 // console.log(subsets);
+
+//Ques 6 - Palindrome Number;
+//Solution:
+
+// function findPalindrome(num) {
+// 	let numStr = num.toString();
+// 	let j = numStr.length - 1;
+// 	for (let i = 0; i < numStr.length; i++) {
+// 		if (i === j) {
+// 			// console.log(i, j);
+// 			break;
+// 		}
+// 		if (numStr[i] !== numStr[j]) {
+// 			return false;
+// 		}
+// 		j--;
+// 	}
+// 	return true;
+// }
+
+// let res = findPalindrome(121);
+// console.log(res);
+
+//Ques 7 - Fibonacci Number;
+//Solution:
+
+// function generateFibNum(num) {
+// 	if (num < 0) return new Error("input number can't be negative");
+// 	if (num === 0) return 0;
+// 	if (num === 1) return 1;
+// 	let a = 0,
+// 		b = 1;
+// 	for (let i = 2; i < num; i++) {
+// 		let temp = a + b;
+// 		a = b;
+// 		b = temp;
+// 	}
+// 	return b;
+// }
+
+// console.log(generateFibNum(8)); //0,1,1,2,3,5,8,13
+
+// function dpFibNum(num) {
+// 	let dp = Array(num).fill(-1);
+// 	dp[0] = 0;
+// 	dp[1] = 1;
+// 	// console.log(dp);
+// 	for (let i = 2; i < num; i++) {
+// 		dp[i] = dp[i - 1] + dp[i - 2];
+// 	}
+// 	return { series: dp, res: dp[num - 1] };
+// }
+// console.log(dpFibNum(8));
+
+//Ques 8 : valid Anagram;
+//Solution:
+
+// function checkValidAnagram(source, target) {
+// 	if (source.length !== target.length) return false;
+// 	let sourceStr, targetStr;
+// 	if (typeof source === "number") {
+// 		sourceStr = arg.toString();
+// 	}
+// 	if (typeof target === "number") {
+// 		targetStr = target.toString();
+// 	}
+// 	console.log(typeof source);
+// 	if (typeof source === "string" && typeof target === "string") {
+// 		// debugger;
+// 		sourceStr = source;
+// 		targetStr = target;
+// 	}
+// 	let sourceMap = {};
+// 	let targetMap = {};
+// 	console.log(sourceStr, targetStr);
+// 	// debugger;
+// 	for (let i = 0; i < sourceStr.length; i++) {
+// 		let ele = sourceStr[i];
+// 		sourceMap[ele] = (sourceMap[i] || 0) + 1;
+// 	}
+// 	for (let j = 0; j < targetStr.length; j++) {
+// 		let ele = sourceStr[j];
+// 		targetMap[ele] = (targetMap[j] || 0) + 1;
+// 	}
+
+// 	for (let key in targetMap) {
+// 		if (sourceMap[key] !== targetMap[key]) {
+// 			return false;
+// 		}
+// 	}
+
+// 	return true;
+// }
+// let source = "112123";
+// let target = "121213";
+// console.log(checkValidAnagram(source, target));
+
+//Question : 9: Two Sum / [2,3,5,1,7,9] target = 12, // output [2,4];
+
+// function findTwoSum(arr, target) {
+// 	for (let k = 0; k < arr.length; k++) {
+// 		for (let i = k + 1; i < arr.length; i++) {
+// 			if (arr[k] + arr[i] === target) {
+// 				return [k, i];
+// 			}
+// 		}
+// 	}
+// 	return "not matched";
+// }
+
+// console.log(findTwoSum([2, 3, 5, 1, 7, 9], 16));
+
+// let arr = [1, 1, 2, 3, 2, 1, 3, 2, 4, 5, 9, 6];
+// function findUnique(arr) {
+//   let obj = {};
+//   let unique = [];
+//   for (let i = 0; i < arr.length; i++) {
+
+//     obj[arr[i]] = (obj[arr[i]] || 0) + 1;
+//   }
+//   Object.entries(obj).forEach((ele) => {
+//     if (ele[1] === 1) {
+//       unique.push(Number(ele[0]));
+//     }
+//   });
+
+//   return { obj, unique };
+// }
+
+// console.log(findUnique(arr));
+
