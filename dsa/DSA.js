@@ -81,4 +81,7 @@
 
 // console.log(result);
 
-console.log("hello world");
+console.log("begin with log1");
+setImmediate(() => console.log("setImmediate called"));
+process.nextTick(() => console.log("next tick called"));
+console.log("end");
