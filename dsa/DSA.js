@@ -81,14 +81,15 @@
 
 // console.log(result);
 
-console.log("begin with log1");
-setImmediate(() => console.log("setImmediate called"));
-let promise = new Promise((resolve, reject) => {
-	resolve(4);
-	console.log("promise Resolved");
-});
+// console.log("begin with log1");
 
-promise.then((res) => console.log("==>", res));
+// setImmediate(() => console.log("setImmediate called"));
+// let promise = new Promise((resolve, reject) => {
+// 	resolve(4);
+// 	console.log("promise Resolved");
+// });
 
-process.nextTick(() => console.log("next tick called"));
-console.log("end");
+// promise.then((res) => console.log("==>", res));
+
+// process.nextTick(() => console.log("next tick called"));
+// console.log("end");
