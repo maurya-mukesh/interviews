@@ -93,3 +93,5 @@
 
 // process.nextTick(() => console.log("next tick called"));
 // console.log("end");
+
+// find prime number

@@ -24,7 +24,7 @@
 // console.log(res);
 
 /**
- * @Question 1 : Polyfill of apply
+ * @Question 2 : Polyfill of apply
  */
 
 // let accountHolder = {
@@ -49,5 +49,32 @@
 // console.log(res);
 
 /**
- * @Question 1 : Polyfill of bind
+ * @Question 3 : Polyfill of bind
+ */
+/**
+ * @Question 4 : Polyfill of promise
+ */
+/**
+ * @Question 5 : Polyfill of promise.all
+ */
+/**
+ * @Question 6 : Polyfill of promise.race
+ */
+/**
+ * @Question 7 : Polyfill of promise.allSettled
+ */
+/**
+ * @Question 8 : Polyfill of split
+ */
+/**
+ * @Question 9 : Polyfill of join
+ */
+/**
+ * @Question 10 : Polyfill of map
+ */
+/**
+ * @Question 11 : Polyfill of reduce
+ */
+/**
+ * @Question 12 : Polyfill of filter
  */
