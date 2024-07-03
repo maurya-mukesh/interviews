@@ -28,3 +28,18 @@ let point: { x: number; y: number } = {
 const logNumber:(i:number)=> void = (num: number) => {
 	console.log(num);
 };
+
+
+// perfect number
+function perfectNumber(num:number):boolean{
+	let arr:number[] = [];
+	for(let i=1; i<Math.ceil(num/2); i++){
+		if(num%i===0 ){
+			arr.push(i)
+		}
+	}
+	console.log(arr)
+	let sumValue = arr.reduce((acc,nextVal)=>acc+nextVal, 0)
+	return (sumValue === num);
+};
+console.log(perfectNumber(28))
