@@ -94,4 +94,17 @@
 // process.nextTick(() => console.log("next tick called"));
 // console.log("end");
 
-// find prime number
+for (var i = 0; i <= 2; i++) {
+	setTimeout(() => {
+		console.log(i);
+	}, 100);
+}
+
+for (var i = 0; i <= 2; i++) {
+	print(i);
+}
+function print(i) {
+	setTimeout(() => {
+		console.log(i);
+	}, 100);
+}

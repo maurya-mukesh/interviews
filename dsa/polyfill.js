@@ -113,13 +113,31 @@
 /**
  * @Question 8 : Polyfill of split
  */
+// String.prototype.mySplit = function (separator) {
+// 	if (separator === "") {
+// 		return Array.from(this);
+// 	}
+// 	let start = 0;
+// 	let arr = [];
+// 	for (let i = 0; i < this.length; i++) {
+// 		if (this.slice(i, i + separator.length) === separator) {
+// 			arr.push(this.slice(start, i));
+// 			start = i + separator.length;
+// 		}
+// 	}
+// 	arr.push(this.slice(start));
+// 	return arr;
+// };
+
+// let result = "MOHNMM,,ALLL,,SNAST".mySplit(",,");
+// console.log(result);
+
 /**
  * @Question 9 : Polyfill of join
  */
 /**
  * @Question 10 : Polyfill of map
  */
-
 // Array.prototype.myMap = function (callback) {
 // 	if (!Array.isArray(this)) return "myMap will work on arrays only";
 // 	let result = [];
@@ -138,29 +156,29 @@
 /**
  * @Question 12 : Polyfill of filter
  */
-Array.prototype.myFilter = function (callback) {
-	let arr = [];
-	for (let i = 0; i < this.length; i++) {
-		if (callback(this[i], i, this)) {
-			arr.push(this[i]);
-		}
-	}
-	return arr;
-};
+// Array.prototype.myFilter = function (callback) {
+// 	let arr = [];
+// 	for (let i = 0; i < this.length; i++) {
+// 		if (callback(this[i], i, this)) {
+// 			arr.push(this[i]);
+// 		}
+// 	}
+// 	return arr;
+// };
 
-let filterResult = [1, 2, 3, 4, 5, 6, 7, 8].myFilter((ele) => ele % 2 === 0);
-console.log(filterResult);
+// let filterResult = [1, 2, 3, 4, 5, 6, 7, 8].myFilter((ele) => ele % 2 === 0);
+// console.log(filterResult);
 
-// Strange filter
-const context = {
-	prefix: "B",
-	startsWithPrefix: function (str) {
-		return str.startsWith(this.prefix);
-	},
-};
+// // Strange filter
+// const context = {
+// 	prefix: "B",
+// 	startsWithPrefix: function (str) {
+// 		return str.startsWith(this.prefix);
+// 	},
+// };
 
-const strings = ["Apple", "Banana", "Avocado", "Apricot", "Blueberry"];
+// const strings = ["Apple", "Banana", "Avocado", "Apricot", "Blueberry"];
 
-// Using native filter method with thisArg
-const filteredStrings = strings.myFilter((ele) => ele.startsWith("A"));
-console.log(filteredStrings);
+// // Using native filter method with thisArg
+// const filteredStrings = strings.myFilter((ele) => ele.startsWith("A"));
+// console.log(filteredStrings);
